@@ -1,149 +1,188 @@
 const { body } = require("express-validator")
 
-const clientRegisterValidation = () => {
+const clientValidation = () => {
 
   return [
     body("name")
       .isString()
-      .withMessage("O nome é obrigatório")
+      .withMessage({
+        name: "O nome é obrigatório"
+      })
       .isLength({ min: 3 })
-      .withMessage("O nome precisa ter no mínimo 3 caracteres"),
+      .withMessage({
+        name: "O nome precisa ter no mínimo 3 caracteres"
+      }),
 
     body("age")
       .isFloat()
-      .withMessage("A idade é obrigatória")
+      .withMessage({
+        age: "A idade é obrigatória"
+      })
       .isLength({ min: 1 })
-      .withMessage("A idade precisa ter no mínimo um número"),
+      .withMessage({
+        age: "A idade precisa ter no mínimo um número"
+      }),
 
     body("adress")
       .isString()
-      .withMessage("O endereço é obrigatório")
+      .withMessage({
+        adress: "O endereço é obrigatório"
+      })
       .isLength({ min: 3 })
-      .withMessage("O endereço precisa ter no mínimo 3 caracteres"),
+      .withMessage({
+        adress: "O endereço precisa ter no mínimo 3 caracteres"
+      }),
 
     body("whatsapp")
       .isString()
-      .withMessage("O whatsapp é obrigatório")
+      .withMessage({
+        whatsapp: "O whatsapp é obrigatório"
+      })
       .isLength({ min: 9 })
-      .withMessage("O WhatsApp precisa ter no mínimo 9 caracteres"),
+      .withMessage({
+        whatsapp: "O WhatsApp precisa ter no mínimo 9 caracteres"
+      }),
 
     body("rg")
       .isString()
-      .withMessage("O RG é obrigatório")
+      .withMessage({
+        rg: "O RG é obrigatório"
+      })
       .isLength({ min: 10 })
-      .withMessage("O RG precisa ter no mínimo 10 caracteres"),
+      .withMessage({
+        rg: "O RG precisa ter no mínimo 10 caracteres"
+      }),
 
     body("cpf")
       .isString()
-      .withMessage("O CPF é obrigatório")
+      .withMessage({
+        cpf: "O CPF é obrigatório"
+      })
       .isLength({ min: 11 })
-      .withMessage("O CPF precisa ter no mínimo 11 caracteres"),
+      .withMessage({
+        cpf: "O CPF precisa ter no mínimo 11 caracteres"
+      }),
 
     body("email")
       .isString()
-      .withMessage("O e-mail é obrigatório")
+      .withMessage({
+        email: "O e-mail é obrigatório"
+      })
       .isEmail()
-      .withMessage("Insira uma e-mail válido email@email.com"),
+      .withMessage({
+        emai: "Insira uma e-mail válido email@email.com"
+      }),
 
     body("met")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        met: "Campo obrigatório"
+      }),
 
 
     body("diabetes")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        diabetes: "Campo obrigatório"
+      }),
 
     body("allergy")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        allergy: "Campo obrigatório"
+      }),
 
-    body("allergySpecify")
-      .isString(),
+    body("allergySpecify"),
 
     body("cuticle")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        cuticle: "Campo obrigatório"
+      }),
 
     body("ringworm")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        ringworm: "Campo obrigatório"
+      }),
 
-    body("ringwormSpecify")
-      .isString(),
+    body("ringwormSpecify"),
 
     body("useMedicine")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        ringwormSpecify: "Campo obrigatório"
+      }),
 
     body("nailBiting")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        nailBiting: "Campo obrigatório"
+      }),
 
     body("ingrowToenail")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        ingrowToenail: "Campo obrigatório"
+      }),
 
     body("blade")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        blade: "Campo obrigatório"
+      }),
 
-    body("bladeSpecify")
-      .isString(),
+    body("bladeSpecify"),
 
     body("sport")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        sport: "Campo obrigatório"
+      }),
 
     body("poolAndSea")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        poolAndSea: "Campo obrigatório"
+      }),
 
     body("whyStretching")
-      .isString()
-      .withMessage("Campo obrigatório")
-      .isLength({ min: 3 })
-      .withMessage("Precisa ter no mínimo 3 caracteres"),
+      .notEmpty()
+      .withMessage({
+        whyStretching: "Campo obrigatório"
+      }),
 
     body("typeStretching")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        typeStretching: "Campo obrigatório"
+      }),
 
     body("nailSize")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        nailSize: "Campo obrigatório"
+      }),
 
     body("nailFormat")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .notEmpty()
+      .withMessage({
+        nailFormat: "Campo obrigatório"
+      }),
 
-    body("details")
-      .isString(),
+    body("details"),
 
     body("price")
-      .isFloat()
       .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
+      .withMessage({
+        price: "Campo obrigatório"
+      }),
 
     body("terms")
-      .isString()
-      .isLength({ min: 3 })
-      .withMessage("Campo obrigatório"),
-
+      .notEmpty()
+      .withMessage({
+        terms: "Campo obrigatório"
+      })
 
   ]
 
@@ -153,5 +192,5 @@ const clientRegisterValidation = () => {
 
 
 module.exports = {
-  clientRegisterValidation
+  clientValidation
 }
