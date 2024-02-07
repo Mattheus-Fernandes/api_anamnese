@@ -23,12 +23,32 @@ const registerAdminValidation = () => {
       .withMessage("A senha precisa ter 3 caracteres."),
   ]
 
-
-
 } 
 
 
+const loginAdminValidation = () => {
+
+  return [
+
+    body("email")
+      .isString()
+      .withMessage("O e-mail é obrigatório")
+      .isEmail()
+      .withMessage("Insira uma e-mail válido email@email.com"),
+
+    body("password")
+      .isString()
+      .withMessage("A senha é obrigatória")
+      .isLength({ min: 3 })
+      .withMessage("A senha precisa ter 3 caracteres."),
+
+  ]
+
+}
+
+
 module.exports = {
-  registerAdminValidation
+  registerAdminValidation,
+  loginAdminValidation
 }
 
