@@ -2,13 +2,14 @@ const ClientRoute = require("express").Router()
 
 
 //Controller
-const {registerCleint} = require("../controller/ClientController")
+const {registerClient} = require("../controller/ClientController")
 
 //Middleware
 const validate = require("../middlewares/handleValidation")
+const {clientRegisterValidation} = require("../middlewares/clientValidation")
 
 
-ClientRoute.post("/register/client", validate, registerCleint)
+ClientRoute.post("/register/client", clientRegisterValidation(), validate, registerClient)
 
 
 module.exports = ClientRoute
