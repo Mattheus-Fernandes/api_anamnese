@@ -5,7 +5,7 @@ const validate = (req, res, next) => {
   const erros = validationResult(req)
 
   if(erros.isEmpty()){
-    return next
+    return next()
   }
 
   const extractedErrors = []
