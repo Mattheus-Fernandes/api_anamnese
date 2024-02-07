@@ -35,6 +35,32 @@ const registerClient = async (req, res) => {
 }
 
 
+const getOneClient = async(req, res) => {
+
+  const {id} = req.params
+
+  try {
+
+    const client =  await ClientModel.findOne({where: {id}})
+
+    if(! client) {
+      res.status(422).json({
+        errors: ["Cliente não encontrado"]
+      })
+
+      return
+    }
+
+    res.status(200).json({client})
+
+  }catch(error){
+    console.log(error)
+  }
+
+
+}
+
 module.exports = {
-  registerClient
+  registerClient,
+  getOneClient
 }
