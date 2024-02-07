@@ -112,6 +112,37 @@ const editClient = async(req, res) => {
 
 }
 
+const deleteClient = async(req, res) => {
+
+  const { id } = req.params
+
+  try {
+
+    if(id){
+
+      const client = await ClientModel.destroy({where: {id}})
+
+      if(!client){
+        res.status(404).json({
+          errors: ["Não foi possivel excluir a ficha!"]
+        }) 
+
+        return
+      }
+
+      res.status(200).json({
+        success: ["Removida com sucesso!"]
+      })
+
+    }
+
+
+  }catch(error){
+    console.log(error)
+  }
+
+}
+
 module.exports = {
   registerClient,
   getOneClient,
