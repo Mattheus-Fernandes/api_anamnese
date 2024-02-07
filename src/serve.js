@@ -16,6 +16,9 @@ app.use(cors())
 //Connection DB
 require("./config/index").connect()
 
+//Model
+require("./model/ClientModel")
+require("./model/AdminModel")
 
 //Test route
 app.get("/", (req, res) => {
