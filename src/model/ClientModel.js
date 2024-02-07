@@ -126,8 +126,12 @@ const Client = connection.define("client", {
     allowNull: false
   },
 
-  price: {
+  details: {
     type: Sequelize.STRING,
+  },
+
+  price: {
+    type: Sequelize.FLOAT,
     allowNull: false
   },
 
@@ -139,6 +143,6 @@ const Client = connection.define("client", {
 })
 
 
-Client.sync({force: true})
+Client.sync({force: false})
 
 module.exports = Client
