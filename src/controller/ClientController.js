@@ -116,5 +116,6 @@ module.exports = {
   registerClient,
   getOneClient,
   getAllClients,
-  editClient
+  editClient,
+  deleteClient
 }
