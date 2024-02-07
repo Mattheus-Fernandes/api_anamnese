@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const port = 8000
 const cors = require("cors")
+const routes = require("./routes/Routes")
 
 
 //Config JSON and form data response
@@ -12,6 +13,7 @@ app.use(express.urlencoded({extended: false}))
 //Solver CORS
 app.use(cors())
 
+app.use(routes)
 
 //Connection DB
 require("./config/index").connect()
@@ -19,6 +21,7 @@ require("./config/index").connect()
 //Model
 require("./model/ClientModel")
 require("./model/AdminModel")
+
 
 //Test route
 app.get("/", (req, res) => {
