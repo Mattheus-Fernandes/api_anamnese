@@ -60,7 +60,27 @@ const getOneClient = async(req, res) => {
 
 }
 
+
+const getAllClients = async(req, res) => {
+
+  try {
+
+    const clients = await ClientModel.findAll({
+      raw: true,
+      order: [["id", "desc"]]
+    })
+
+    res.json({clients})
+
+
+  }catch(error){
+    console.log(error)
+  }
+
+}
+
 module.exports = {
   registerClient,
-  getOneClient
+  getOneClient,
+  getAllClients
 }
