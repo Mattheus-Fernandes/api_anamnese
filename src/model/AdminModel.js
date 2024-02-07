@@ -3,12 +3,18 @@ const {connection} = require("../config/index")
 
 
 const Admin = connection.define("admin", {
-  email: {
+  
+  name: {
     type: Sequelize.STRING,
     allowNull: false
 
   },
 
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false
+
+  },
   password: {
     type: Sequelize.STRING,
     allowNull: false
@@ -17,6 +23,6 @@ const Admin = connection.define("admin", {
 })
 
 
-Admin.sync({force: true})
+Admin.sync({force: false})
 
 module.exports = Admin
