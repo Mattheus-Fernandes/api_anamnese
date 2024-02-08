@@ -111,7 +111,7 @@ const clientValidation = () => {
     body("useMedicine")
       .notEmpty()
       .withMessage({
-        ringwormSpecify: "Campo obrigatório"
+        useMedice: "Campo obrigatório"
       }),
 
     body("nailBiting")
