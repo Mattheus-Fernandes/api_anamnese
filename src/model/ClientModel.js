@@ -107,7 +107,6 @@ const Client = connection.define("client", {
 
   whyStretching: {
     type: Sequelize.STRING,
-    allowNull: false
   },
 
   typeStretching: {
