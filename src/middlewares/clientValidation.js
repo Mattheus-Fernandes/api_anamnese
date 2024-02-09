@@ -118,9 +118,9 @@ const clientValidation = () => {
 
     body("nailBiting")
       .notEmpty()
-      .withMessage([
-        nailBiting = "Campo obrigatório"
-      ]),
+      .withMessage({
+        nailBiting: "Campo obrigatório"
+    }),
 
     body("ingrowToenail")
       .notEmpty()
@@ -146,11 +146,7 @@ const clientValidation = () => {
         poolAndSea: "Campo obrigatório"
       }),
 
-    body("whyStretching")
-      .notEmpty()
-      .withMessage({
-        whyStretching: "Campo obrigatório"
-      }),
+    body("whyStretching"),
 
     body("typeStretching")
       .notEmpty()
