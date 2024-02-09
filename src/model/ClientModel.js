@@ -89,7 +89,6 @@ const Client = connection.define("client", {
 
   blade: {
     type: Sequelize.STRING,
-    allowNull: false
   },
   
   bladeSpecify: {
@@ -132,7 +131,6 @@ const Client = connection.define("client", {
 
   price: {
     type: Sequelize.FLOAT,
-    allowNull: false
   },
 
   terms: {
