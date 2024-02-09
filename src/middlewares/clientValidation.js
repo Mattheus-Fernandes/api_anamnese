@@ -6,7 +6,7 @@ const clientValidation = () => {
     body("name")
       .isString()
       .withMessage({
-        name: "O nome é obrigatório"
+        name: "Campo obrigatório"
       })
       .isLength({ min: 3 })
       .withMessage({
@@ -16,7 +16,7 @@ const clientValidation = () => {
     body("age")
       .isFloat()
       .withMessage({
-        age: "A idade é obrigatória"
+        age: "Campo obrigatório"
       })
       .isLength({ min: 1 })
       .withMessage({
@@ -26,7 +26,7 @@ const clientValidation = () => {
     body("adress")
       .isString()
       .withMessage({
-        adress: "O endereço é obrigatório"
+        adress: "Campo obrigatório"
       })
       .isLength({ min: 3 })
       .withMessage({
@@ -36,7 +36,7 @@ const clientValidation = () => {
     body("whatsapp")
       .isString()
       .withMessage({
-        whatsapp: "O whatsapp é obrigatório"
+        whatsapp: "Campo obrigatório"
       })
       .isLength({ min: 9 })
       .withMessage({
@@ -46,7 +46,7 @@ const clientValidation = () => {
     body("rg")
       .isString()
       .withMessage({
-        rg: "O RG é obrigatório"
+        rg: "Campo obrigatório"
       })
       .isLength({ min: 10 })
       .withMessage({
@@ -56,7 +56,7 @@ const clientValidation = () => {
     body("cpf")
       .isString()
       .withMessage({
-        cpf: "O CPF é obrigatório"
+        cpf: "Campo obrigatório"
       })
       .isLength({ min: 11 })
       .withMessage({
@@ -66,11 +66,11 @@ const clientValidation = () => {
     body("email")
       .isString()
       .withMessage({
-        email: "O e-mail é obrigatório"
+        email: "Campo obrigatório"
       })
       .isEmail()
       .withMessage({
-        emai: "Insira uma e-mail válido email@email.com"
+        email: "Insira uma e-mail válido email@email.com"
       }),
 
     body("met")
@@ -92,6 +92,7 @@ const clientValidation = () => {
         allergy: "Campo obrigatório"
       }),
 
+    //optional
     body("allergySpecify"),
 
     body("cuticle")
@@ -106,6 +107,7 @@ const clientValidation = () => {
         ringworm: "Campo obrigatório"
       }),
 
+    //optional
     body("ringwormSpecify"),
 
     body("useMedicine")
@@ -116,9 +118,9 @@ const clientValidation = () => {
 
     body("nailBiting")
       .notEmpty()
-      .withMessage({
-        nailBiting: "Campo obrigatório"
-      }),
+      .withMessage([
+        nailBiting = "Campo obrigatório"
+      ]),
 
     body("ingrowToenail")
       .notEmpty()
@@ -126,12 +128,10 @@ const clientValidation = () => {
         ingrowToenail: "Campo obrigatório"
       }),
 
-    body("blade")
-      .notEmpty()
-      .withMessage({
-        blade: "Campo obrigatório"
-      }),
+    //optional
+    body("blade"),
 
+    //optional
     body("bladeSpecify"),
 
     body("sport")
@@ -170,13 +170,11 @@ const clientValidation = () => {
         nailFormat: "Campo obrigatório"
       }),
 
+    //optional
     body("details"),
 
-    body("price")
-      .isLength({ min: 3 })
-      .withMessage({
-        price: "Campo obrigatório"
-      }),
+    //optional
+    body("price"),
 
     body("terms")
       .notEmpty()
