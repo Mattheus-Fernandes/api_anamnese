@@ -9,6 +9,11 @@ const Client = connection.define("client", {
     allowNull: false
   },
 
+  lastName: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+
   age: {
     type: Sequelize.FLOAT,
     allowNull: false
@@ -127,11 +132,6 @@ const Client = connection.define("client", {
   details: {
     type: Sequelize.STRING,
   },
-
-  price: {
-    type: Sequelize.FLOAT,
-  },
-
   terms: {
     type: Sequelize.STRING,
     allowNull: false
