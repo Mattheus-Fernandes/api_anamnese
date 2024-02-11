@@ -13,6 +13,16 @@ const clientValidation = () => {
         name: "O nome precisa ter no mínimo 3 caracteres"
       }),
 
+    body("lastName")
+      .isString()
+      .withMessage({
+        lastName: "Campo obrigatório"
+      })
+      .isLength({ min: 3 })
+      .withMessage({
+        lastName: "O sobrenome precisa ter no mínimo 3 caracteres"
+      }),
+
     body("age")
       .isFloat()
       .withMessage({
